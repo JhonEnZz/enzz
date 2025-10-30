@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ENZZ — Eternova Nexus of Zenith Zone</title>
+  <meta name="description" content="ENZZ | Eternova Nexus of Zenith Zone — Company profile. Streaming via MUX. Video hanya pelengkap." />
+  <meta name="theme-color" content="#00ffff" />
+  <meta name="application-name" content="ENZZ" />
+  <meta name="apple-mobile-web-app-title" content="ENZZ" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+  <link rel="icon" type="image/png" sizes="32x32"
+        href="https://lh3.google.com/u/2/d/1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH=w32-h32-iv1">
+  <link rel="icon" type="image/png" sizes="192x192"
+        href="https://lh3.google.com/u/2/d/1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH=w192-h192-iv1">
+  <link rel="apple-touch-icon" sizes="180x180"
+        href="https://lh3.google.com/u/2/d/1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH=w180-h180-iv1">
+  <link rel="shortcut icon"
+        href="https://lh3.google.com/u/2/d/1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH=w1920-h942-iv1?auditContext=prefetch">
+  <link rel="icon" type="image/png" sizes="32x32"
+        href="https://drive.usercontent.google.com/uc?id=1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH&export=download">
+  <link rel="apple-touch-icon"
+        href="https://drive.usercontent.google.com/uc?id=1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH&export=download">
+
+  <style>
+    :root{
+      --bg:#0b1117;--panel:#0f1a24;--ink:#e6f0ff;--muted:#9fb2c7;--brand:#00ffff;--accent:#7cf;
+      --border:rgba(255,255,255,.08);--shadow:0 22px 60px rgba(0,0,0,.35);
+      --btn-dark:#0f1a26;--btn-dark-ink:#cfe5ff;--btn-outline:rgba(124,207,255,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);
+      background:
+        radial-gradient(1200px 800px at 10% -10%,rgba(0,255,255,.08),transparent 70%),
+        radial-gradient(800px 600px at 90% 10%,rgba(124,207,255,.08),transparent 60%),
+        linear-gradient(180deg,#0a0f14,#081019 60%,#0b1117);
+      background-attachment: fixed, fixed, fixed;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-size: cover, cover, cover;
+      background-position: center top, right 10% top, center top;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto}
+    .container{width:min(1180px,92%);margin:0 auto}
+
+    .nav{
+      position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;
+      padding:10px 14px;background:rgba(10,15,20,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{height:34px;width:auto}
+    .brand h1{font:800 18px/1 Orbitron;margin:0;letter-spacing:.08em}
+    .menu{display:flex;gap:14px;align-items:center}
+    .menu a{font:600 14px/1.2 Poppins;padding:10px 12px;border-radius:10px;color:#d6e7ff;opacity:.9}
+    .menu a:hover{background:rgba(124,207,255,.1)}
+    .cta{
+      background:var(--btn-dark);color:var(--btn-dark-ink);
+      padding:10px 14px;border-radius:999px;font-weight:800;border:1px solid var(--btn-outline)
+    }
+    .cta:hover{filter:brightness(1.05)}
+    .nav-burger{display:none;gap:8px;align-items:center;border:1px solid var(--border);
+      background:rgba(124,207,255,.08);color:#d6e7ff;padding:8px 10px;border-radius:10px;font-weight:700}
+    .drawer{position:fixed;top:56px;left:0;right:0;z-index:49;background:rgba(10,15,20,.96);
+      backdrop-filter:blur(10px);border-bottom:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height .28s ease}
+    .drawer.open{max-height:60vh}
+    .drawer a{display:block;padding:12px 16px;border-top:1px solid var(--border);color:#e2eeff}
+
+    .hero{position:relative;min-height:60vh;padding-top:76px;border-bottom:1px solid var(--border);display:grid;place-items:center;overflow:hidden}
+    .hero .inner{text-align:center;padding:44px 0 18px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid rgba(124,207,255,.35);background:rgba(124,207,255,.08);font-size:13px}
+    .headline{font:800 40px/1.08 Orbitron;letter-spacing:.06em;margin:10px 0 10px;text-transform:uppercase}
+    .sub{max-width:760px;margin:0 auto 16px;color:var(--muted);font-size:15px}
+    .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .btn{padding:11px 14px;border-radius:14px;border:1px solid var(--border);font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--accent));color:#04161a}
+    .btn.ghost{background:rgba(124,207,255,.06)}
+
+    section{padding:70px 0;border-top:1px solid var(--border)}
+    h2.section-title{font:800 26px/1.2 Orbitron;text-transform:uppercase;text-align:center;letter-spacing:.05em;margin:0 0 10px}
+    p.lead{color:var(--muted);text-align:center;margin:0 auto 16px;max-width:900px}
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:900px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:16px;padding:16px}
+    .card h3{margin:6px 0 8px;font:700 18px/1.3 Poppins}
+
+    .comp-wrap{display:grid;place-items:center;margin:0 auto 18px}
+    .computer{width:128px;height:92px;border:2px solid var(--border);border-radius:10px;position:relative;background:linear-gradient(180deg,#09121a,#0b1620);box-shadow:0 12px 40px rgba(0,0,0,.35)}
+    .computer:after{content:"";position:absolute;left:50%;bottom:-16px;transform:translateX(-50%);width:56px;height:12px;border-radius:6px;background:#0e1b26;border:2px solid var(--border)}
+    .scan{position:absolute;inset:10px;border-radius:6px;overflow:hidden;background:#02070b}
+    .scan:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(transparent 0 6px,rgba(0,255,255,.06) 6px 8px)}
+    .bar{position:absolute;left:0;right:0;height:16px;background:linear-gradient(90deg,rgba(0,255,255,0),rgba(0,255,255,.25),rgba(0,255,255,0));animation:glide 2.6s linear infinite}
+    @keyframes glide{0%{top:-18px}100%{top:100%}}
+    .dots{position:absolute;bottom:10px;left:10px;display:flex;gap:6px}
+    .dots i{width:6px;height:6px;border-radius:50%;background:rgba(0,255,255,.35);animation:blink 1.8s ease-in-out infinite}
+    .dots i:nth-child(2){animation-delay:.3s}.dots i:nth-child(3){animation-delay:.6s}
+    @keyframes blink{0%,100%{opacity:.3}50%{opacity:1}}
+
+    .program{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:18px;padding:18px;margin:16px 0;box-shadow:var(--shadow)}
+    .program h3{font:800 19px/1.25 Orbitron;margin:4px 0 6px;text-transform:uppercase}
+    .program .meta{display:flex;gap:10px;flex-wrap:wrap;color:#cfe5ff}
+    .program .meta .badge{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:rgba(124,207,255,.08);font-weight:700;font-size:12px}
+    .program .cols{display:block}
+    .program p{color:#d7e8ff;font-size:15px}
+    .program ul{margin:6px 0 0 18px}
+
+    .video-stack{
+      position:relative;max-width:900px;margin:12px auto 0;border-radius:14px;overflow:hidden;
+      border:1px solid var(--border);background:#000;box-shadow:var(--shadow)
+    }
+    .video-stack .ratio{position:relative;width:100%;padding-top:56.25%}
+    .video-stack video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;display:block;background:#000}
+    .video-caption{font-size:12px;color:#9fb2c7;margin:6px 2px 0;text-align:center}
+
+    .cta-bottom{padding:28px 0 6px;margin-top:10px}
+    .cta-bottom .wrap{max-width:900px;margin:0 auto;text-align:center}
+    .cta-bottom p{color:var(--muted);margin:6px 0 14px;}
+    .cta-bottom .wrap .btn{margin-top:22px; display:inline-block;}
+
+
+    footer{border-top:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02))}
+    .footer-wrap{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:12px;padding:16px 0}
+    .footer-left{display:flex;align-items:center;gap:10px}
+    .footer-center{text-align:right;color:#a9bed4}
+    .foot-quote{font-size:13px;opacity:.95}
+    .foot-subline {
+    display:block;
+    margin-top:6px;
+    font-size:12.5px;
+    color:#9fb2c7;
+    line-height:1.5;
+    font-style:italic;
+  }
+  @media (max-width:900px){
+    .foot-subline{font-size:11.5px}
+  }
+
+
+    .lab-cta{margin-top:24px !important}
+
+    @media (max-width:780px){
+      .brand h1{font-size:14px}
+      .brand img{height:28px}
+      .headline{font-size:24px}
+      .sub{font-size:12px}
+      .tag{font-size:12px;padding:5px 9px}
+      .btn{padding:9px 12px;font-size:13px;border-radius:12px}
+      .menu{display:none}
+      .nav-burger{display:inline-flex}
+      section{padding:46px 0}
+      h2.section-title{font-size:22px}
+      .program{padding:12px}
+      .program p{font-size:13.5px}
+      .card h3{font-size:16px}
+      .footer-wrap{grid-template-columns:1fr;gap:10px;text-align:center}
+      .footer-center{text-align:center}
+      .foot-quote{font-size:12px}
+      .cta-bottom{padding:24px 0 6px}
+      .cta-bottom .wrap .btn{margin-top:12px}
+      .lab-cta{margin-top:20px !important}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">
+      <picture>
+        <source srcset="https://lh3.google.com/u/2/d/1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH=w192-h192-iv1" type="image/png">
+        <img alt="ENZZ Logo" height="34" loading="eager" fetchpriority="high" decoding="async"
+             referrerpolicy="no-referrer"
+             src="https://drive.usercontent.google.com/uc?id=1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH&export=download"
+             onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2232%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 rx=%226%22 ry=%226%22 fill=%22%230b1117%22/%3E%3Ctext x=%2212%22 y=%2222%22 font-family=%22Orbitron,Arial%22 font-size=%2218%22 fill=%22%2300ffff%22%3EENZZ%3C/text%3E%3C/svg%3E';"/>
+      </picture>
+      <h1>ENZZ</h1>
+    </div>
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#academy">ENZZ Academy</a>
+      <a href="#lab">ENZZ Lab</a>
+      <a href="#cta-bottom" class="cta">Explore the Nexus</a>
+    </div>
+    <button id="navburger" class="nav-burger" aria-expanded="false" aria-controls="navdrawer">☰ Menu</button>
+  </nav>
+
+  <div id="navdrawer" class="drawer" aria-hidden="true">
+    <div class="container">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#academy">ENZZ Academy</a>
+      <a href="#lab">ENZZ Lab</a>
+      <a href="#contact">Contact</a>
+      <a href="#cta-bottom">Explore the Nexus</a>
+    </div>
+  </div>
+
+  <header id="home" class="hero">
+    <div class="inner container">
+      <span class="tag">Eternova Nexus of Zenith Zone</span>
+      <h2 class="headline">Born from brilliance.<br/>Rising to the Zenith.</h2>
+      <p class="sub">ENZZ adalah ekosistem digital: <strong>ENZZ Academy</strong> untuk pembelajaran teknologi & karier, dan <strong>ENZZ Lab</strong> untuk eksperimen publik 100% cyber. Video hanya pelengkap—fokus pada manfaat, kurikulum, dan hasil nyata.</p>
+      <div class="actions">
+        <a class="btn primary" href="#academy">Jelajahi ENZZ Academy</a>
+        <a class="btn ghost" href="#lab">Masuk ENZZ Lab</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="comp-wrap" aria-hidden="true">
+        <div class="computer">
+          <div class="scan"><div class="bar"></div></div>
+          <div class="dots"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <h2 class="section-title">Eternova • Nexus • Zenith</h2>
+      <p class="lead">
+        <strong>Eternova</strong> (Eternal + Nova) melambangkan lahirnya bintang baru yang terus bersinar. <strong>Nexus</strong> adalah penghubung—pusat energi dan kolaborasi. <strong>Zenith Zone</strong> menandai puncak tertinggi pencapaian manusia.
+        ENZZ hadir sebagai ekosistem yang menyatukan pembelajar, inovator, dan kreator untuk bertumbuh hingga mencapai zenith mereka.
+      </p>
+      <div class="grid cols-3" style="margin-top:16px">
+        <div class="card">
+          <h3>Brand Essence</h3>
+          <p>Futuristik, intelektual, dan visioner dengan palet cyber-blue, tipografi Orbitron, dan aksen cahaya yang presisi.</p>
+        </div>
+        <div class="card">
+          <h3>Nilai Utama</h3>
+          <p>Materi relevan industri, proyek portofolio nyata, komunitas suportif, serta standar kualitas yang konsisten.</p>
+        </div>
+        <div class="card">
+          <h3>Tagline</h3>
+          <p><em>Born from brilliance. Rising to the Zenith.</em> — setiap inisiatif berangkat dari kecemerlangan dan berorientasi pada hasil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="academy">
+    <div class="container">
+      <h2 class="section-title">ENZZ Academy</h2>
+      <p class="lead">Kurikulum disusun untuk <strong>hasil</strong>: skill terpakai, sertifikasi relevan, dan job-readiness. Video di sini opsional (sebagai pengantar), bukan fokus utama.</p>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner → Intermediate</span><span class="badge">Durasi: 6–8 minggu</span><span class="badge">Format: Live + Project</span></div>
+        <h3>Cyber Security — Perisai Sistem & Data</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> melindungi aset informasi melalui <em>prevention–detection–response</em> yang terukur.</p>
+            <ul>
+              <li><strong>Dasar & Arsitektur:</strong> CIA Triad, Zero-Trust, model ancaman, kebijakan.</li>
+              <li><strong>Kontrol Teknis:</strong> OS/Network/Web hardening, patching, EDR/AV.</li>
+              <li><strong>Monitoring:</strong> log pipeline, korelasi SIEM, use-case SOC.</li>
+              <li><strong>IR & Forensik:</strong> playbook, containment, eradication, post-mortem.</li>
+              <li><strong>Compliance:</strong> awareness, backup/restore, dasar audit.</li>
+            </ul>
+            <p><strong>Output:</strong> kebijakan keamanan, runbook IR, simulasi serangan & laporan analisis log. <strong>Karier:</strong> SOC Analyst, Blue Team, Junior Pentester.</p>
+          </div>
+          <div class="video-stack" data-playback="Tr6n9q00GKRbD3paQo5G3I7FxH3Tj01GiirxTgGdFHUPk">
+            <div class="ratio"></div>
+            <video playsinline autoplay muted loop preload="auto"></video>
+          </div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner</span><span class="badge">Durasi: 4–6 minggu</span><span class="badge">Format: Project</span></div>
+        <h3>Blockchain — Transparansi & Kepercayaan Digital</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> merancang solusi berbasis ledger terdistribusi untuk integritas data dan otomasi proses.</p>
+            <ul>
+              <li><strong>Konsensus & Jaringan:</strong> PoW/PoS, node, finality.</li>
+              <li><strong>Smart Contract:</strong> arsitektur, standar token (ERC-20/721), keamanan dasar.</li>
+              <li><strong>Privasi & Integrasi:</strong> wallet, oracles, pola off-chain.</li>
+              <li><strong>Use-case:</strong> supply chain, identitas, pembayaran mikro.</li>
+            </ul>
+            <p><strong>Output:</strong> PoC dapat diaudit + dokumentasi arsitektur.</p>
+          </div>
+          <div class="video-stack" data-playback="e6chW0000qcMdvRu337sqNQXkr8CW01T7DhI4as02lsNerQ"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner → Intermediate</span><span class="badge">Durasi: 6–8 minggu</span><span class="badge">Format: Lab</span></div>
+        <h3>Internet of Things (IoT) — Ekosistem Perangkat Terhubung</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> membangun sistem sensor-to-cloud dengan keamanan menyeluruh dan observabilitas.</p>
+            <ul>
+              <li><strong>Perangkat:</strong> sensor/MCU, GPIO, konsumsi daya.</li>
+              <li><strong>Komunikasi:</strong> MQTT/HTTP, QoS, topik & payload.</li>
+              <li><strong>Edge & Cloud:</strong> stream processing, rule engine, storage.</li>
+              <li><strong>Keamanan:</strong> provisioning, OTA, autentikasi perangkat.</li>
+              <li><strong>Visualisasi:</strong> dashboard, alerting, automasi.</li>
+            </ul>
+            <p><strong>Output:</strong> prototipe end-to-end + dashboard monitoring.</p>
+          </div>
+          <div class="video-stack" data-playback="yeijhuyBN3dyDZi6x8dwxFmWQyB1kbeyrjuTOBsvWyg"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner → Intermediate</span><span class="badge">Durasi: 4–6 minggu</span><span class="badge">Format: Praktikum</span></div>
+        <h3>Fiber Optic — Jaringan Berkecepatan Tinggi</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> merancang, memasang, dan menguji jaringan fiber optik skala SOHO hingga enterprise.</p>
+            <ul>
+              <li><strong>Dasar Optik:</strong> jenis serat, redaman, konektor, SFP/GBIC.</li>
+              <li><strong>Instalasi:</strong> splicing, termination, tray & manajemen patch.</li>
+              <li><strong>Pengukuran:</strong> OTDR, power meter, loss budget.</li>
+              <li><strong>Desain:</strong> FTTH/FTTB, backbone, proteksi ring.</li>
+              <li><strong>Dokumentasi & K3:</strong> standar pengujian dan keselamatan.</li>
+            </ul>
+            <p><strong>Output:</strong> laporan OTDR & power test, rancangan jaringan lengkap.</p>
+          </div>
+          <div class="video-stack" data-playback="In00BLkGaPphtgQYIxcUsF4yv5AgKQ9HOhC89BqV6rUY"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner</span><span class="badge">Durasi: 4 minggu</span><span class="badge">Format: Live + Lab</span></div>
+        <h3>Microsoft 365 / Windows Admin — Produktivitas & Keamanan</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> operasi tenant M365 & Windows yang aman dan efisien.</p>
+            <ul><li>Entra ID, MFA, Conditional Access</li><li>Intune, compliance, Autopilot</li><li>Exchange/Teams/SharePoint</li><li>Defender, DLP, audit</li><li>Power Automate</li></ul>
+          </div>
+          <div class="video-stack" data-playback="2kLeMw82sTJh1Ay02XsoQ9TBs1DIGDupPM4fWguYAW02o"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner → Intermediate</span><span class="badge">Durasi: 6 minggu</span><span class="badge">Format: Praktikum</span></div>
+        <h3>Networking — Routing, Switching, & Services</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> jaringan IP andal, aman, dan terukur.</p>
+            <ul><li>VLAN, STP, EtherChannel</li><li>OSPF, inter-VLAN, dasar BGP</li><li>DHCP, DNS, NAT, QoS</li><li>ACL, VPN site-to-site</li><li>SNMP, NetFlow, syslog</li></ul>
+          </div>
+          <div class="video-stack" data-playback="qI1wj6GROEY95TzRcsSxnZCr3BM8QjRQqL17cv7nYXU"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner → Intermediate</span><span class="badge">Durasi: 6 minggu</span><span class="badge">Format: Lab</span></div>
+        <h3>Computing — Cloud & Systems</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> layanan komputasi modern yang hemat biaya dan andal.</p>
+            <ul><li>Linux/Windows hardening</li><li>VM, Docker</li><li>IAM, VPC/VNet</li><li>CI/CD, observability</li><li>Backup & recovery</li></ul>
+          </div>
+          <div class="video-stack" data-playback="8a5ifgd2j5BsMzNxGbgVkU8028dAGmJOSvJEc8I7bZMg"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner → Intermediate</span><span class="badge">Durasi: 6–10 minggu</span><span class="badge">Format: Project</span></div>
+        <h3>Programming — Full-Stack Fundamentals</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> membangun aplikasi web modern end-to-end.</p>
+            <ul><li>Git, HTTP, REST</li><li>HTML/CSS/JS/TS</li><li>API, auth, DB</li><li>Testing & deploy</li><li>OWASP dasar</li></ul>
+          </div>
+          <div class="video-stack" data-playback="fK02af2yVdQ3AX1JRSMsg00r27fUiY7vOcqWBGHDZRd4E"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner</span><span class="badge">Durasi: 4–6 minggu</span><span class="badge">Format: Lab + Project</span></div>
+        <h3>Data — Analytics & Dashboard</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> mengubah data menjadi insight yang dapat dieksekusi.</p>
+            <ul><li>ETL/ELT & data quality</li><li>SQL inti</li><li>Dashboard & storytelling</li><li>Otomasi pelaporan</li><li>Privasi & etika</li></ul>
+          </div>
+          <div class="video-stack" data-playback="XI7vKfAk2cCyM35MeaCGrjK615bxO4qdfM02O8I1jbE8"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner</span><span class="badge">Durasi: 4 minggu</span><span class="badge">Format: Project</span></div>
+        <h3>Marketing — Digital Growth Basics</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> kampanye digital yang terukur dan etis.</p>
+            <ul><li>Persona, value prop, funnel</li><li>SEO, Ads, Email, Social</li><li>Konten & A/B test</li><li>KPI & attribution</li><li>Kepatuhan & privasi</li></ul>
+          </div>
+          <div class="video-stack" data-playback="Dah1ANq6tV6TMLSAlLePBKEUuC84lOBADfeaJtZ2S5Y"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div class="program">
+        <div class="meta"><span class="badge">Level: Beginner → Intermediate</span><span class="badge">Durasi: 6 minggu</span><span class="badge">Format: Studio</span></div>
+        <h3>Design — UI/UX Essentials</h3>
+        <div class="cols">
+          <div>
+            <p><strong>Fungsi:</strong> UI/UX intuitif dan konsisten.</p>
+            <ul><li>Riset ringan & persona</li><li>Layout, tipografi, warna</li><li>Wireframe → hi-fi → handoff</li><li>Evaluasi & usability</li><li>Design system mini</li></ul>
+          </div>
+          <div class="video-stack" data-playback="LtrQZwcPelYnSX701AVlUPw3Sp1xblUQCDy44fubRLPI"><div class="ratio"></div><video playsinline autoplay muted loop preload="auto"></video></div>
+          <div class="video-caption">ASSET ENZZ ACADEMY</div>
+        </div>
+      </div>
+
+      <div id="cta-bottom" class="cta-bottom">
+        <div class="wrap">
+          <p class="lead">Daftar lengkap silabus & pendaftaran tersedia di portal <strong>ENZZ Academy</strong>.</p>
+          <a class="btn primary" href="https://academy.enzz.co.id" target="_blank" rel="noopener">Masuk ke ENZZ Academy →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="lab">
+    <div class="container">
+      <h2 class="section-title">ENZZ Lab</h2>
+      <p class="lead">Arena eksperimen publik untuk aplikasi web berbasis siber: kalkulator, timer, converter, utilitas AI, dan prototipe tanpa menyimpan data pribadi. Semua dirancang <strong>privacy-first</strong>.</p>
+      <div class="grid cols-2" style="margin-top:16px">
+        <div class="card"><h3>Eksperimen Publik</h3><p>Proyek kecil yang bisa langsung dipakai, dari utilitas hingga demo teknologi. Kami mendorong open collaboration.</p></div>
+        <div class="card"><h3>Tanpa PII</h3><p>Tidak menampilkan/menyimpan informasi pribadi. Log minimal, tanpa tracking invasif.</p></div>
+      </div>
+      <p class="lab-cta" style="text-align:center"><a class="btn ghost" href="https://lab.enzz.co.id" target="_blank" rel="noopener">Masuk ENZZ Lab →</a></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Hubungkan Inovasi Anda</h2>
+      <p class="lead">Ingin kolaborasi, membuka kelas, atau mempublikasikan eksperimen Anda di ENZZ? Mari terhubung.</p>
+      <div class="card" style="max-width:720px;margin:16px auto;text-align:center">
+        <h3 style="margin:6px 0 10px">Kirim Email</h3>
+        <p>email: <a href="mailto:hello@enzz.co.id">hello@enzz.co.id</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-wrap">
+        <div class="footer-left">
+          <picture>
+            <source srcset="https://lh3.google.com/u/2/d/1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH=w192-h192-iv1" type="image/png">
+            <img alt="ENZZ Logo" height="24" loading="eager" decoding="async"
+                referrerpolicy="no-referrer"
+                src="https://drive.usercontent.google.com/uc?id=1_Zjea2TZ2bQijaDO8P0KKbeWTMbfDRQH&export=download"
+                onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2226%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 rx=%226%22 ry=%226%22 fill=%22%230b1117%22/%3E%3Ctext x=%2210%22 y=%2218%22 font-family=%22Orbitron,Arial%22 font-size=%2214%22 fill=%22%2300ffff%22%3EENZZ%3C/text%3E%3C/svg%3E';"/>
+          </picture>
+          <div class="footer-info">
+            <small>© <span id="y"></span> ENZZ — Eternova Nexus of Zenith Zone</small><br>
+            <small><strong>PT ELVIC VENTURA INDONESIA</strong> — Innovation For Tomorrow</small><br>
+            <small>Jl. Saribu Dolok no.470, Kel. Panei Tongah, Kec. Panei, Kab. Simalungun</small>
+          </div>
+        </div>
+        <div class="footer-center">
+          <small class="foot-quote">“Born from brilliance. Rising to the Zenith.”</small>
+          <small class="foot-subline">
+          Knowledge. Innovation. Collaboration. — Membangun ekosistem digital berkelanjutan untuk generasi selanjutnya.
+        </small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.7/dist/hls.min.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    (function(){
+      const btn = document.getElementById('navburger');
+      const drawer = document.getElementById('navdrawer');
+      if(!btn || !drawer) return;
+      btn.addEventListener('click', ()=>{
+        const open = drawer.classList.toggle('open');
+        drawer.setAttribute('aria-hidden', !open);
+        btn.setAttribute('aria-expanded', open);
+      });
+      drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=> {
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', true);
+        btn.setAttribute('aria-expanded', false);
+      }));
+    })();
+
+    (function initMux(){
+      const supportsHlsNative = !!document.createElement('video').canPlayType('application/vnd.apple.mpegURL');
+
+      document.querySelectorAll('.video-stack[data-playback]').forEach(function(box){
+        const id = (box.getAttribute('data-playback')||'').trim();
+        const video = box.querySelector('video');
+
+        if (!id || /^PLAYBACK_ID_/.test(id)) { box.style.display = 'none'; return; }
+
+        const hlsUrl = `https://stream.mux.com/${id}.m3u8`;
+        const poster = `https://image.mux.com/${id}/thumbnail.jpg?time=1`;
+
+        video.setAttribute('poster', poster);
+        video.muted = true; video.setAttribute('muted','');
+        video.setAttribute('playsinline',''); video.setAttribute('webkit-playsinline','');
+        video.setAttribute('crossorigin','anonymous');
+        video.autoplay = true; video.loop = true; video.preload = 'auto';
+
+        const tryPlay = ()=> video.play().catch(()=>{});
+
+        if (supportsHlsNative) {
+          video.src = hlsUrl;
+          if (video.readyState >= 2) tryPlay(); else video.addEventListener('canplay', tryPlay, {once:true});
+        } else if (window.Hls && Hls.isSupported()) {
+          const hls = new Hls({maxBufferLength:30, backBufferLength:30, enableWorker:true});
+          hls.loadSource(hlsUrl); hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, tryPlay);
+          hls.on(Hls.Events.ERROR, (evt, data) => {
+            if (data && data.fatal) {
+              switch (data.type) {
+                case Hls.ErrorTypes.NETWORK_ERROR: hls.startLoad(); break;
+                case Hls.ErrorTypes.MEDIA_ERROR: hls.recoverMediaError(); break;
+                default: hls.destroy();
+              }
+            }
+          });
+        } else {
+          video.src = hlsUrl; // fallback
+        }
+
+        const io = new IntersectionObserver(entries=>{
+          entries.forEach(e=>{ if(e.isIntersecting) tryPlay(); else video.pause(); });
+        },{threshold:.35});
+        io.observe(video);
+
+        const resumeAll = ()=>{
+          tryPlay();
+          window.removeEventListener('pointerdown', resumeAll, {passive:true});
+          window.removeEventListener('touchstart', resumeAll, {passive:true});
+          window.removeEventListener('scroll', resumeAll, {passive:true});
+        };
+        window.addEventListener('pointerdown', resumeAll, {passive:true});
+        window.addEventListener('touchstart', resumeAll, {passive:true});
+        window.addEventListener('scroll', resumeAll, {passive:true});
+      });
+    })();
+  </script>
+</body>
+</html>
